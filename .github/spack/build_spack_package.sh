@@ -44,6 +44,9 @@ fi
 # the ubuntu CI runner runs on multiple cpu archs; compile for an old one
 ARCH="linux-ubuntu20.04-x86_64"
 
+# do some more cache cleaning to improve CI build stability
+spack clean -fmp
+
 # trigger spack's bootstrapping
 spack spec zlib
 
